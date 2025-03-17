@@ -1,8 +1,8 @@
 import { createConfig, http } from "wagmi";
-import { liskSepolia } from "wagmi/chains";
+import { liskSepolia, sepolia } from "wagmi/chains";
 import { walletConnect } from "wagmi/connectors";
 
-export const supportedNetworks = [liskSepolia];
+export const supportedNetworks = [ liskSepolia, sepolia,];
 
 export const config = createConfig({
     chains: supportedNetworks,
@@ -12,5 +12,7 @@ export const config = createConfig({
     ],
     transports: {
         [liskSepolia.id]: http(),
+        [sepolia.id]: http(),
+        
     },
 });
